@@ -1,0 +1,61 @@
+Anotações Gerais sobre Git e GitHub
+
+Blob(Bolha) -> Arquivo base de armazenamento de dados do git. Tem uma estrutura padronizada(Identificação própria), armazena o tipo do objeto, tamanho da string, tamanho do arquivo e etc.
+
+Tree(Árvores) -> Armazenam blob's e também apontam para tipos de blob's diferentes. Apontam também para outras árvores.
+	* Cada blob possuí uma informação criptografada em sha1, para indicar se houve ou não modificação nos arquivos.
+	
+Commit(Entregar/Comprometer-se) -> Objeto que vai juntar tudo. Armazena informações das árvores, autor e a mensagem referente as modificações.  
+
+Chave SSH -> Forma de estabelecer uma conexão segura e encriptada entre duas máquinas.
+
+Git Init -> Inicializa um repositório.
+
+Git Add -> Adiciona (Prepara/Staged) um arquivo ao repositório.
+	Tracked(Monitorados) -> Arquivos conhecidos pelo Git.
+		* Unmodified(Não modificiado) -> Arquivos não modificados.
+		* Modified(Modificado) -> Arquivos modificados.
+		* Staged(Encenação) -> Arquivos que serão adicionados ao projeto.
+	Untracked(Não monitorados) -> Arquivos desconhecidos pelo Git.
+
+Git commit -> Envelopa modificações com mensagens e informações para adicionar ao repositório.
+	* - m -> Passa uma mensagem ao fazer o commit.
+
+Git status -> Informações sobre alterações no projeto.
+
+Git config --list -> Verifica configurações do git. Dados de usuário para verificar se o repositório local está de acordo com o remoto.
+
+Git config --global user email -> Define o arquivo global de configuração do git. "Pode ser alterado via editor também"
+
+Git remote add origin "link" -> Define o repositório remoto ao qual serão submetidos os arquivos do projeto. (Usa-se origin por convensão)
+
+Git push origin master -> "Empurra" os arquivos do repositório local para o remoto.
+
+Git clone -> Puxa o repositório para a máquina e realizar alterações.
+
+Git remote -v -> Lista repositórios remotos configurados na máquina.
+
+Git checkout -> Aponta o projeto para uma determinada branch.
+	* -b -> cria uma nova branch.
+
+====================================================================================================================================================================================================
+
+Conflitos
+
+Conflito de merge -> Quando duas(ou mais) pessoas tentam empurrar modificações ao git na mesma linha de código.
+	* Fazer um git pull origin master para puxar os dados novos da última modificação remota para o repositório local.
+	* Git add *, git commit -m "resolve conflitos", git push origin master.
+ 
+Branches(Galhos)
+Head -> Tag qye aponta para o último commit válido.
+
+Pull Request
+Processo para validar contribuições no projeto.
+
+Fork
+Puxa um repositório de um perfil para outro perfil.
+	* Procurar criar uma branch sempre que fazer um fork, para o repositório principal puxar só ela.
+	
+Merge(Mesclar)
+Juntal o pull request com o projeto original.
+
