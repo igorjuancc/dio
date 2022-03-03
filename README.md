@@ -16,7 +16,7 @@ Repositório para armazenar atividades e arquivos dos cursos, bootcamps e aceler
        * [Java](https://github.com/igorjuancc/dio/tree/main/Certificados/Java)
        * [Lógica](https://github.com/igorjuancc/dio/tree/main/Certificados/Logica)
    * [Bootcamps](https://github.com/igorjuancc/dio/tree/main/Botcamps) 
-       * [GFT Start #4](https://github.com/igorjuancc/dio/tree/main/Botcamps/GFT_Start_4_Java) 
+       * [GFT Start #4 Java](https://github.com/igorjuancc/dio/tree/main/Botcamps/GFT_Start_4_Java) 
          * [Exercícios](https://github.com/igorjuancc/dio/tree/main/Botcamps/GFT_Start_4_Java/Exercicios)
          * [Introdução ao Git e ao GitHub](https://github.com/igorjuancc/dio/tree/main/Botcamps/GFT_Start_4_Java/Introducao%20ao%20Git%20e%20GitHub)
          * [Desafio Dio Banco Digital](https://github.com/igorjuancc/dio/tree/main/Botcamps/GFT_Start_4_Java/desafio-dio-banco)
