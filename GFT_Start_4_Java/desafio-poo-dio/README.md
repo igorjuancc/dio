@@ -1,6 +1,6 @@
-# Desafio Dio Banco Digital
+# Abstraindo um Bootcamp Usando Orientação a Objetos em Java
 
-Implementação de exercício prático de simulação de funcionamento de um sistema bancario. Atividade desenvolvida para aplicação de conceitos de orientação a objetos em línguagem Java.
+Implementação de exercício prático de abstração da plataforma de um bootcamp, aplicando conceitos de orientação a objetos em línguagem Java.
 
 ### Pré-requisitos
 
@@ -8,7 +8,6 @@ Implementação de exercício prático de simulação de funcionamento de um sis
 
 * JRE - Java Runtime Environment 11 (Ou superior)
 * JDK - Java Development Kit 11 (Ou superior)
-* [Lombok 1.18.22](https://projectlombok.org/)
 * IDE para desenvolvimento Java
 
 #### Opcional
@@ -20,18 +19,16 @@ Implementação de exercício prático de simulação de funcionamento de um sis
 #### Ambiente Linux
 
     # clonar o repositório (ou realizar o download)
-    git clone https://github.com/igorjuancc/desafio-dio-banco.git
-    
-    # utilize uma ide para importar o lombok para a aplicação
-    
+    git clone https://github.com/igorjuancc/dio
+        
     # acessar a pasta src do projeto
-    cd desafio-dio-banco/src
+    cd dio/GFT_Start_4_Java/desafio-poo-dio/src
 
     # compilar o arquivo da aplicação
-    javac App.java
+    javac Main.java
 
     # executar o arquivo de classe Java
-    java App
+    java Main
 
 O projeto pode ser executado também a partir de uma IDE de preferência do usuário.
 
@@ -42,17 +39,13 @@ A implementação da atividade desse projeto foi desenvolvida no Bootcamp GFT St
 #### Conceitos Aplicados
 
 - [x] Abstração
-  - [x] Interface
-  - [x] Classes abstratas  
 - [x] Encapsulamento 
 - [x] Herança
 - [x] Polimorfismo 
-- [x] Enum 
-- [x] Lombok
 
 ### Referência
 
-JÚNIOR, Venilton Falvo. **Criando um Banco Digital com Java e Orientação a Objetos**. Github, 02 de ago. de 2021. Disponível em: <https://github.com/falvojr/lab-banco-digital-oo>. Acesso em: 06 de fev. de 2021.
+Cavalcante, Camila. **Desafio: Aprenda na Prática Programação Orientada a Objetos**. Github, 19 de jul. de 2021. Disponível em: <https://github.com/cami-la/desafio-poo-dio>. Acesso em: 03 de mar. de 2022.
 
 ### Autor
 <a href="https://br.linkedin.com/in/igor-juan-cordeiro-da-costa-2b4a77101">
