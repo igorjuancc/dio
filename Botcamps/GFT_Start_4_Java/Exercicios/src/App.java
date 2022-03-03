@@ -1,6 +1,3 @@
-import java.text.DecimalFormat;
-import java.util.Scanner;
-
 import DesafiosBasicos.DesafioBasico;
 import DesafiosGFTStart.NotacaoCientifica;
 import DesafiosGFTStart.NotasMoedas;
