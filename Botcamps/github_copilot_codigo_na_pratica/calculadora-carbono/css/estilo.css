@@ -1,0 +1,275 @@
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   ========================================================= */
+:root {
+  --green: #e6f7ea;
+  --green-dark: #2b8a3e;
+  --surface: #ffffff;
+  --text: #103018;
+  --muted: #6b776f;
+  --shadow: 0 12px 30px rgba(16,48,24,0.12);
+  --radius: 12px;
+  --gap: 1.25rem;
+}
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.4;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--green) 0%, #dff3df 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: var(--gap);
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+.page__header,
+.page__footer {
+  grid-column: 1 / -1;
+  border-radius: calc(var(--radius) / 1.15);
+  background: linear-gradient(90deg, var(--green-dark), #216b2e);
+  color: #fff;
+}
+
+.page__header {
+  padding: clamp(.75rem, 1.6vw, 1.25rem)
+           clamp(.75rem, 3vw, 2rem);
+  box-shadow: 0 6px 18px rgba(10,40,20,0.08);
+}
+
+.page__footer {
+  padding: clamp(.5rem, 1.4vw, .9rem);
+  text-align: center;
+  font-size: .95rem;
+  box-shadow: 0 6px 12px rgba(16,48,24,0.04);
+}
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+.page__header h1,
+.page__title {
+  margin: 0 0 .25rem;
+}
+
+.page__subtitle {
+  margin: .25rem 0 0;
+  font-size: .95rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* =========================================================
+   MAIN (FORM + SEÇÕES EMPILHADAS)
+   ========================================================= */
+.page__main {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+.calculadora {
+  width: 100%;
+  max-width: 720px;
+  background: var(--surface);
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,48,24,0.04);
+}
+
+/* Campos */
+.calculadora__group,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+.calculadora__label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.calculadora__input {
+  width: 100%;
+  padding: .7rem .9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(16,48,24,0.08);
+  background: #fbfdfb;
+  font-size: 1rem;
+  transition: box-shadow .15s, border-color .15s;
+}
+
+.calculadora__input:focus {
+  outline: none;
+  border-color: rgba(43,138,62,0.6);
+  box-shadow: 0 6px 18px rgba(43,138,62,0.08);
+}
+
+.calculadora__hint {
+  display: block;
+  margin-top: .35rem;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+/* =========================================================
+   TRANSPORTES (RADIO COMO BOTÕES)
+   ========================================================= */
+.calculadora__transportes {
+  margin-bottom: 1rem;
+  padding: .75rem;
+  border-radius: 8px;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.55)
+  );
+}
+
+.calculadora__option {
+  flex: 1;
+  min-width: 110px;
+  position: relative;
+}
+
+.calculadora__radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.calculadora__option-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .75rem .5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 88px;
+  transition: all .12s ease;
+}
+
+.calculadora__option-icon {
+  font-size: 40px;
+}
+
+.calculadora__radio:checked + .calculadora__option-label {
+  background: linear-gradient(
+    180deg,
+    rgba(43,138,62,0.08),
+    rgba(43,138,62,0.04)
+  );
+  border: 1px solid rgba(43,138,62,0.28);
+  box-shadow: 0 8px 22px rgba(43,138,62,0.08);
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+.calculadora__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .5rem;
+}
+
+.calculadora__submit {
+  padding: .6rem 1rem;
+  background: var(--green-dark);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease;
+}
+
+.calculadora__submit:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   SEÇÕES (RESULTADO / COMPARAÇÃO / CRÉDITOS)
+   ========================================================= */
+.secao {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 1.25rem;
+  background: var(--surface);
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(16,48,24,0.04);
+}
+
+.secao h2 {
+  margin-bottom: .75rem;
+  color: var(--green-dark);
+}
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+.comparacao table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparacao th,
+.comparacao td {
+  padding: .5rem .6rem;
+  text-align: left;
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+
+  .page__main {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculadora__submit {
+    width: 100%;
+  }
+}

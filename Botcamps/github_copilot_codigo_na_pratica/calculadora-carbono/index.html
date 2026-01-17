@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>🍃 Calculadora de emissão de CO₂</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="page__header">
+    <h1 class="page__title">🍃 Calculadora de emissão de CO₂</h1>
+    <p class="page__subtitle">
+        Estime emissões de CO₂ entre duas cidades com base na distância e no meio de transporte.
+    </p>
+</header>
+
+<main class="page__main">
+
+    <form id="calculadora-form" class="calculadora" novalidate>
+
+        <div class="calculadora__group">
+            <label for="origem" class="calculadora__label">Origem</label>
+            <input
+                    type="text"
+                    id="origem"
+                    name="origem"
+                    class="calculadora__input"
+                    placeholder="Digite a cidade origem"
+                    list="lista-cidades"
+                    required
+            >
+        </div>
+
+        <div class="calculadora__group">
+            <label for="destino" class="calculadora__label">Destino</label>
+            <input
+                    type="text"
+                    id="destino"
+                    name="destino"
+                    class="calculadora__input"
+                    placeholder="Digite a cidade destino"
+                    list="lista-cidades"
+                    required
+            >
+        </div>
+
+        <!-- AJUSTE: datalist usado pelo método getCidadesUnicasOrdenadas -->
+        <datalist id="lista-cidades"></datalist>
+
+        <div class="calculadora__group">
+            <label for="distancia" class="calculadora__label">Distância (Km)</label>
+            <input
+                    type="number"
+                    id="distancia"
+                    name="distancia"
+                    class="calculadora__input"
+                    placeholder="0"
+                    min="0"
+                    step="any"
+                    disabled
+            >
+            <small class="calculadora__hint">
+                A distância será preenchida automaticamente
+            </small>
+
+            <div class="calculadora__manual">
+                <input type="checkbox" id="manual-dist">
+                <label for="manual-dist">Inserir distância manualmente</label>
+            </div>
+        </div>
+
+        <fieldset class="calculadora__transportes">
+            <legend class="calculadora__legend">Meio de Transporte</legend>
+
+            <div class="calculadora__option">
+                <input type="radio" name="meio" value="bicicleta" checked>
+                🚲 Bicicleta
+            </div>
+
+            <div class="calculadora__option">
+                <input type="radio" name="meio" value="carro">
+                🚗 Carro
+            </div>
+
+            <div class="calculadora__option">
+                <input type="radio" name="meio" value="onibus">
+                🚌 Ônibus
+            </div>
+
+            <div class="calculadora__option">
+                <input type="radio" name="meio" value="caminhao">
+                🚚 Caminhão
+            </div>
+        </fieldset>
+
+        <div class="calculadora__actions calculadora__actions--center">
+            <button type="submit">Calcular Emissão</button>
+        </div>
+
+    </form>
+
+    <section id="resultados" class="secao resultados" hidden>
+        <h2>Resultados</h2>
+        <p><strong>Origem:</strong> <span id="res-origem"></span></p>
+        <p><strong>Destino:</strong> <span id="res-destino"></span></p>
+        <p><strong>Distância:</strong> <span id="res-distancia"></span> km</p>
+        <p><strong>Meio:</strong> <span id="res-meio"></span></p>
+        <p><strong>Emissão:</strong> <span id="res-emissao"></span> kg CO₂</p>
+    </section>
+
+    <section id="comparacao" class="secao comparacao" hidden>
+        <h2>Comparação entre meios</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Meio</th>
+                <th>Emissão (kg CO₂)</th>
+                <th>Observação</th>
+            </tr>
+            </thead>
+            <tbody id="comparacao-corpo"></tbody>
+        </table>
+    </section>
+
+    <section id="creditos-co2" class="secao creditos-co2" hidden>
+        <h2>Créditos de Carbono</h2>
+
+        <p>
+            <strong>Emissão calculada:</strong>
+            <span id="cred-emissao"></span> kg CO₂
+        </p>
+
+        <p>
+            <strong>Créditos necessários:</strong>
+            <span id="cred-quantidade"></span> créditos
+            <small>(1 crédito = 1.000 kg CO₂)</small>
+        </p>
+
+        <p>
+            💰 <strong>Valor estimado:</strong>
+            <span id="cred-valor"></span>
+        </p>
+
+        <p id="cred-faixa">
+            <!-- Aqui pode mostrar a faixa de preço estimada, ex: R$ 2,58 - R$ 7,74 -->
+        </p>
+    </section>
+
+
+
+</main>
+
+<footer class="page__footer">
+    Desenvolvido para a DIO | Projeto GitHub Copilot
+</footer>
+
+<script src="js/rotas.js"></script>
+<script src="js/config.js"></script>
+<script src="js/calculadora.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+</html>
